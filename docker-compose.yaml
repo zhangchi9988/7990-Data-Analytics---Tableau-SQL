@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+   db:
+      image: khwang0/comp7990_db
+      environment:
+          - MYSQL_ROOT_PASSWORD=abcdef
+   myadmin:
+      image: phpmyadmin:latest
+      depends_on:
+          - db
+      ports:
+          - 8888:80
